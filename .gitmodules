@@ -1,0 +1,3 @@
+[submodule "ground-station/sch-blocks"]
+	path = ground-station/sch-blocks
+	url = git@github.com:calstar/hardware-sch-blocks.git

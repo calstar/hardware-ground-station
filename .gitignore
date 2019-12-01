@@ -9,7 +9,7 @@
 *~
 _autosave-*
 *.tmp
-*-cache.lib
+# *-cache.lib This file is needed for cadlab
 *-rescue.lib
 *-save.pro
 *-save.kicad_pcb
