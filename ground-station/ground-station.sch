@@ -22,7 +22,7 @@ U 1 1 5DE3459D
 P 650 1450
 F 0 "TP2" H 592 1476 50  0000 R CNN
 F 1 "TestPoint" H 592 1567 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 850 1450 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 850 1450 50  0001 C CNN
 F 3 "~" H 850 1450 50  0001 C CNN
 	1    650  1450
 	-1   0    0    1   
@@ -55,7 +55,7 @@ U 1 1 5DE3592C
 P 2450 1350
 F 0 "TP1" H 2508 1468 50  0000 L CNN
 F 1 "TestPoint" H 2508 1377 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 2650 1350 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 2650 1350 50  0001 C CNN
 F 3 "~" H 2650 1350 50  0001 C CNN
 	1    2450 1350
 	1    0    0    -1  
@@ -77,7 +77,7 @@ U 1 1 5DE362CE
 P 2450 950
 F 0 "TP3" H 2392 976 50  0000 R CNN
 F 1 "TestPoint" H 2392 1067 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 2650 950 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 2650 950 50  0001 C CNN
 F 3 "~" H 2650 950 50  0001 C CNN
 	1    2450 950 
 	-1   0    0    1   
@@ -395,7 +395,7 @@ U 1 1 5DE5CCE7
 P 1400 4700
 F 0 "SW1" H 1400 4985 50  0000 C CNN
 F 1 "SW_Push" H 1400 4894 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 1400 4900 50  0001 C CNN
+F 2 "calstar:TE_Button_USLPT3026" H 1400 4900 50  0001 C CNN
 F 3 "~" H 1400 4900 50  0001 C CNN
 	1    1400 4700
 	1    0    0    -1  
@@ -750,17 +750,6 @@ IO4
 Text Notes 4100 4400 0    79   ~ 0
 Broken-out IO
 $Comp
-L Connector_Generic:Conn_01x05 J5
-U 1 1 5DE5A1F0
-P 2350 3300
-F 0 "J5" H 2430 3342 50  0000 L CNN
-F 1 "Conn_01x05" H 2430 3251 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 2350 3300 50  0001 C CNN
-F 3 "~" H 2350 3300 50  0001 C CNN
-	1    2350 3300
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+3.3V #PWR014
 U 1 1 5DE5AA3A
 P 2150 3100
@@ -769,7 +758,7 @@ F 1 "+3.3V" H 2165 3273 50  0000 C CNN
 F 2 "" H 2150 3100 50  0001 C CNN
 F 3 "" H 2150 3100 50  0001 C CNN
 	1    2150 3100
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR015
@@ -780,7 +769,7 @@ F 1 "GND" H 2155 3327 50  0000 C CNN
 F 2 "" H 2150 3500 50  0001 C CNN
 F 3 "" H 2150 3500 50  0001 C CNN
 	1    2150 3500
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 Text GLabel 2150 3400 0    50   Input ~ 0
 SWCLK
@@ -792,27 +781,12 @@ Text Notes 1800 2850 0    79   ~ 0
 Programming Port
 Wire Notes Line
 	1750 2700 2950 2700
-$Sheet
-S 1100 5500 550  450 
-U 5DE5F1BE
-F0 "RFM69HCW" 50
-F1 "sch-blocks/RFM69HCW/RFM69HCW.sch" 25
-F2 "INT" I L 1100 5700 50 
-F3 "ANT" I L 1100 5550 50 
-F4 "RST" I L 1100 5800 50 
-F5 "nSS" I R 1650 5550 50 
-F6 "MISO" I R 1650 5750 50 
-F7 "MOSI" I R 1650 5850 50 
-F8 "SCK" I R 1650 5650 50 
-$EndSheet
 Text GLabel 1000 5700 0    50   Input ~ 0
 RadioINT
-Text GLabel 1000 5800 0    50   Input ~ 0
+Text GLabel 1000 5900 0    50   Input ~ 0
 RadioRST
 Wire Wire Line
 	1000 5700 1100 5700
-Wire Wire Line
-	1100 5800 1000 5800
 Text GLabel 1750 5550 2    50   Input ~ 0
 RadionSS
 Text GLabel 1750 5650 2    50   Input ~ 0
@@ -832,91 +806,74 @@ Wire Wire Line
 $Comp
 L Device:Antenna_Dipole AE1
 U 1 1 5DE73945
-P 850 5200
-F 0 "AE1" H 1080 5114 50  0000 L CNN
-F 1 "Antenna_Dipole" H 1080 5023 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Molex_73251-1153_EdgeMount_Horizontal" H 850 5200 50  0001 C CNN
-F 3 "~" H 850 5200 50  0001 C CNN
-	1    850  5200
+P 700 5200
+F 0 "AE1" H 950 5150 50  0000 L CNN
+F 1 "Antenna_Dipole" H 950 5100 50  0000 L CNN
+F 2 "Connector_Coaxial:SMA_Molex_73251-1153_EdgeMount_Horizontal" H 700 5200 50  0001 C CNN
+F 3 "~" H 700 5200 50  0001 C CNN
+	1    700  5200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1100 5550 950  5550
-Wire Wire Line
-	950  5550 950  5400
-$Comp
-L power:GND #PWR09
-U 1 1 5DE76017
-P 850 5400
-F 0 "#PWR09" H 850 5150 50  0001 C CNN
-F 1 "GND" H 855 5227 50  0000 C CNN
-F 2 "" H 850 5400 50  0001 C CNN
-F 3 "" H 850 5400 50  0001 C CNN
-	1    850  5400
-	1    0    0    -1  
-$EndComp
-Text Notes 650  5200 0    79   ~ 0
-Radio
 Wire Notes Line
 	550  5050 2250 5050
 $Comp
 L Connector_Generic:Conn_01x04 J6
 U 1 1 5DE78423
-P 1650 2150
-F 0 "J6" H 1600 2350 50  0000 L CNN
-F 1 "Conn_01x04" V 1750 1900 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 1650 2150 50  0001 C CNN
-F 3 "~" H 1650 2150 50  0001 C CNN
-	1    1650 2150
-	1    0    0    -1  
+P 1650 2200
+F 0 "J6" H 1600 2400 50  0000 L CNN
+F 1 "Conn_01x04" V 1750 1950 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 1650 2200 50  0001 C CNN
+F 3 "~" H 1650 2200 50  0001 C CNN
+	1    1650 2200
+	1    0    0    1   
 $EndComp
 $Comp
 L power:GND #PWR017
 U 1 1 5DE789BC
-P 1450 2350
-F 0 "#PWR017" H 1450 2100 50  0001 C CNN
-F 1 "GND" H 1455 2177 50  0000 C CNN
-F 2 "" H 1450 2350 50  0001 C CNN
-F 3 "" H 1450 2350 50  0001 C CNN
-	1    1450 2350
-	1    0    0    -1  
+P 1450 2300
+F 0 "#PWR017" H 1450 2050 50  0001 C CNN
+F 1 "GND" H 1455 2127 50  0000 C CNN
+F 2 "" H 1450 2300 50  0001 C CNN
+F 3 "" H 1450 2300 50  0001 C CNN
+	1    1450 2300
+	-1   0    0    -1  
 $EndComp
 $Comp
 L power:+5V #PWR016
 U 1 1 5DE78BC3
-P 1450 2050
-F 0 "#PWR016" H 1450 1900 50  0001 C CNN
-F 1 "+5V" H 1465 2223 50  0000 C CNN
-F 2 "" H 1450 2050 50  0001 C CNN
-F 3 "" H 1450 2050 50  0001 C CNN
-	1    1450 2050
-	1    0    0    -1  
+P 1450 2000
+F 0 "#PWR016" H 1450 1850 50  0001 C CNN
+F 1 "+5V" H 1465 2173 50  0000 C CNN
+F 2 "" H 1450 2000 50  0001 C CNN
+F 3 "" H 1450 2000 50  0001 C CNN
+	1    1450 2000
+	-1   0    0    -1  
 $EndComp
 $Comp
 L Device:R R1
 U 1 1 5DE79AC1
-P 1300 2150
-F 0 "R1" V 1093 2150 50  0000 C CNN
-F 1 "330" V 1184 2150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 1230 2150 50  0001 C CNN
-F 3 "~" H 1300 2150 50  0001 C CNN
-	1    1300 2150
+P 1300 2100
+F 0 "R1" V 1093 2100 50  0000 C CNN
+F 1 "330" V 1184 2100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 1230 2100 50  0001 C CNN
+F 3 "~" H 1300 2100 50  0001 C CNN
+	1    1300 2100
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R2
 U 1 1 5DE79F9B
-P 1300 2250
-F 0 "R2" V 1400 2250 50  0000 C CNN
-F 1 "330" V 1500 2250 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 1230 2250 50  0001 C CNN
-F 3 "~" H 1300 2250 50  0001 C CNN
-	1    1300 2250
+P 1300 2200
+F 0 "R2" V 1400 2200 50  0000 C CNN
+F 1 "330" V 1500 2200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 1230 2200 50  0001 C CNN
+F 3 "~" H 1300 2200 50  0001 C CNN
+	1    1300 2200
 	0    1    1    0   
 $EndComp
-Text GLabel 950  2150 0    50   Input ~ 0
+Text GLabel 950  2100 0    50   Input ~ 0
 MCU_TX
-Text GLabel 950  2250 0    50   Input ~ 0
+Text GLabel 950  2200 0    50   Input ~ 0
 MCU_RX
 Text Notes 600  1850 0    79   ~ 0
 UART
@@ -930,7 +887,7 @@ U 1 1 5DE8F9AE
 P 950 4700
 F 0 "TP4" H 900 4750 50  0000 R CNN
 F 1 "TestPoint" H 900 4850 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 1150 4700 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1150 4700 50  0001 C CNN
 F 3 "~" H 1150 4700 50  0001 C CNN
 	1    950  4700
 	-1   0    0    1   
@@ -952,7 +909,7 @@ U 1 1 5DE95F38
 P 2800 5250
 F 0 "TP16" H 2650 5550 50  0000 L CNN
 F 1 "TestPoint" H 2550 5450 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 3000 5250 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 3000 5250 50  0001 C CNN
 F 3 "~" H 3000 5250 50  0001 C CNN
 	1    2800 5250
 	1    0    0    -1  
@@ -966,7 +923,7 @@ U 1 1 5DE966C8
 P 2800 5850
 F 0 "TP17" H 2650 6150 50  0000 L CNN
 F 1 "TestPoint" H 2550 6050 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 3000 5850 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 3000 5850 50  0001 C CNN
 F 3 "~" H 3000 5850 50  0001 C CNN
 	1    2800 5850
 	1    0    0    -1  
@@ -974,38 +931,6 @@ $EndComp
 Connection ~ 2800 5850
 Wire Wire Line
 	2800 5850 2750 5850
-$Comp
-L Connector:TestPoint TP5
-U 1 1 5DE990BF
-P 1050 2150
-F 0 "TP5" H 900 2400 50  0000 L CNN
-F 1 "TestPoint" H 650 2300 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 1250 2150 50  0001 C CNN
-F 3 "~" H 1250 2150 50  0001 C CNN
-	1    1050 2150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP6
-U 1 1 5DE994DB
-P 1050 2250
-F 0 "TP6" H 1100 2450 50  0000 L CNN
-F 1 "TestPoint" H 1100 2350 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 1250 2250 50  0001 C CNN
-F 3 "~" H 1250 2250 50  0001 C CNN
-	1    1050 2250
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	950  2150 1050 2150
-Wire Wire Line
-	1050 2150 1150 2150
-Connection ~ 1050 2150
-Wire Wire Line
-	1150 2250 1050 2250
-Wire Wire Line
-	1050 2250 950  2250
-Connection ~ 1050 2250
 Text GLabel 2100 4000 0    50   Input ~ 0
 SWCLK
 Text GLabel 2100 3900 0    50   Input ~ 0
@@ -1018,7 +943,7 @@ U 1 1 5DEABC80
 P 2100 3800
 F 0 "TP13" V 2100 4000 50  0000 L CNN
 F 1 "TestPoint" V 2100 4200 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 2300 3800 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 2300 3800 50  0001 C CNN
 F 3 "~" H 2300 3800 50  0001 C CNN
 	1    2100 3800
 	0    1    1    0   
@@ -1029,7 +954,7 @@ U 1 1 5DEAC02A
 P 2100 3900
 F 0 "TP14" V 2100 4100 50  0000 L CNN
 F 1 "TestPoint" V 2100 4300 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 2300 3900 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 2300 3900 50  0001 C CNN
 F 3 "~" H 2300 3900 50  0001 C CNN
 	1    2100 3900
 	0    1    1    0   
@@ -1040,7 +965,7 @@ U 1 1 5DEAC5D1
 P 2100 4000
 F 0 "TP15" V 2100 4200 50  0000 L CNN
 F 1 "TestPoint" V 2100 4400 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 2300 4000 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 2300 4000 50  0001 C CNN
 F 3 "~" H 2300 4000 50  0001 C CNN
 	1    2100 4000
 	0    1    1    0   
@@ -1063,7 +988,7 @@ U 1 1 5DEB532E
 P 1050 6100
 F 0 "TP7" V 1050 6300 50  0000 L CNN
 F 1 "TestPoint" V 1050 6500 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 1250 6100 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1250 6100 50  0001 C CNN
 F 3 "~" H 1250 6100 50  0001 C CNN
 	1    1050 6100
 	0    1    1    0   
@@ -1074,7 +999,7 @@ U 1 1 5DEB5925
 P 1050 6200
 F 0 "TP8" V 1050 6400 50  0000 L CNN
 F 1 "TestPoint" V 1050 6600 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 1250 6200 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1250 6200 50  0001 C CNN
 F 3 "~" H 1250 6200 50  0001 C CNN
 	1    1050 6200
 	0    1    1    0   
@@ -1085,7 +1010,7 @@ U 1 1 5DEB5BC5
 P 1050 6300
 F 0 "TP9" V 1050 6500 50  0000 L CNN
 F 1 "TestPoint" V 1050 6700 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 1250 6300 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1250 6300 50  0001 C CNN
 F 3 "~" H 1250 6300 50  0001 C CNN
 	1    1050 6300
 	0    1    1    0   
@@ -1096,7 +1021,7 @@ U 1 1 5DEB5CC9
 P 1050 6400
 F 0 "TP10" V 1050 6600 50  0000 L CNN
 F 1 "TestPoint" V 1050 6800 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 1250 6400 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1250 6400 50  0001 C CNN
 F 3 "~" H 1250 6400 50  0001 C CNN
 	1    1050 6400
 	0    1    1    0   
@@ -1107,7 +1032,7 @@ U 1 1 5DEB5DED
 P 1050 6500
 F 0 "TP11" V 1050 6700 50  0000 L CNN
 F 1 "TestPoint" V 1050 6900 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 1250 6500 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1250 6500 50  0001 C CNN
 F 3 "~" H 1250 6500 50  0001 C CNN
 	1    1050 6500
 	0    1    1    0   
@@ -1118,7 +1043,7 @@ U 1 1 5DEB5FA3
 P 1050 6600
 F 0 "TP12" V 1050 6800 50  0000 L CNN
 F 1 "TestPoint" V 1050 7000 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 1250 6600 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1250 6600 50  0001 C CNN
 F 3 "~" H 1250 6600 50  0001 C CNN
 	1    1050 6600
 	0    1    1    0   
@@ -1137,7 +1062,7 @@ U 1 1 5DEB8CBB
 P 5150 4500
 F 0 "TP18" H 5092 4526 50  0000 R CNN
 F 1 "TestPoint" H 5092 4617 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 5350 4500 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 5350 4500 50  0001 C CNN
 F 3 "~" H 5350 4500 50  0001 C CNN
 	1    5150 4500
 	-1   0    0    1   
@@ -1150,7 +1075,7 @@ U 1 1 5DEB9146
 P 5150 5000
 F 0 "TP19" H 5092 5026 50  0000 R CNN
 F 1 "TestPoint" H 5092 5117 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 5350 5000 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 5350 5000 50  0001 C CNN
 F 3 "~" H 5350 5000 50  0001 C CNN
 	1    5150 5000
 	-1   0    0    1   
@@ -1163,7 +1088,7 @@ U 1 1 5DEB9367
 P 5150 5400
 F 0 "TP20" H 5092 5426 50  0000 R CNN
 F 1 "TestPoint" H 5092 5517 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 5350 5400 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 5350 5400 50  0001 C CNN
 F 3 "~" H 5350 5400 50  0001 C CNN
 	1    5150 5400
 	-1   0    0    1   
@@ -1176,7 +1101,7 @@ U 1 1 5DEB96E8
 P 5150 5800
 F 0 "TP21" H 5092 5826 50  0000 R CNN
 F 1 "TestPoint" H 5092 5917 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 5350 5800 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 5350 5800 50  0001 C CNN
 F 3 "~" H 5350 5800 50  0001 C CNN
 	1    5150 5800
 	-1   0    0    1   
@@ -1233,4 +1158,53 @@ Wire Notes Line
 	3050 4150 5600 4150
 Wire Notes Line
 	3050 550  5600 550 
+$Comp
+L power:GND #PWR09
+U 1 1 5DE76017
+P 800 5450
+F 0 "#PWR09" H 800 5200 50  0001 C CNN
+F 1 "GND" H 805 5277 50  0000 C CNN
+F 2 "" H 800 5450 50  0001 C CNN
+F 3 "" H 800 5450 50  0001 C CNN
+	1    800  5450
+	0    -1   -1   0   
+$EndComp
+Text Notes 650  5200 0    79   ~ 0
+Radio
+Wire Wire Line
+	800  5450 800  5400
+Wire Wire Line
+	700  5550 700  5400
+Wire Wire Line
+	700  5550 1100 5550
+$Comp
+L Connector_Generic:Conn_01x05 J5
+U 1 1 5DE5A1F0
+P 2350 3300
+F 0 "J5" H 2430 3342 50  0000 L CNN
+F 1 "Conn_01x05" H 2430 3251 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 2350 3300 50  0001 C CNN
+F 3 "~" H 2350 3300 50  0001 C CNN
+	1    2350 3300
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	950  2100 1150 2100
+Wire Wire Line
+	950  2200 1150 2200
+$Sheet
+S 1100 5500 550  450 
+U 5DE5F1BE
+F0 "RFM69HCW" 50
+F1 "sch-blocks/RFM69HCW/RFM69HCW.sch" 25
+F2 "INT" I L 1100 5700 50 
+F3 "ANT" I L 1100 5550 50 
+F4 "RST" I L 1100 5900 50 
+F5 "nSS" I R 1650 5550 50 
+F6 "MISO" I R 1650 5750 50 
+F7 "MOSI" I R 1650 5850 50 
+F8 "SCK" I R 1650 5650 50 
+$EndSheet
+Wire Wire Line
+	1000 5900 1100 5900
 $EndSCHEMATC
