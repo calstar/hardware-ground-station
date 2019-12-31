@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:ground-station-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -649,8 +648,6 @@ Wire Wire Line
 	2550 4650 2850 4650
 Text Notes 2500 4400 0    79   ~ 0
 External LEDs
-Wire Notes Line
-	2450 4250 3950 4250
 $Comp
 L Connector_Generic:Conn_01x02 J1
 U 1 1 5DE52B3D
@@ -814,8 +811,6 @@ F 3 "~" H 700 5200 50  0001 C CNN
 	1    700  5200
 	1    0    0    -1  
 $EndComp
-Wire Notes Line
-	550  5050 2250 5050
 $Comp
 L Connector_Generic:Conn_01x04 J6
 U 1 1 5DE78423
@@ -970,90 +965,6 @@ F 3 "~" H 2300 4000 50  0001 C CNN
 	1    2100 4000
 	0    1    1    0   
 $EndComp
-Text GLabel 1050 6100 0    50   Input ~ 0
-RadioINT
-Text GLabel 1050 6200 0    50   Input ~ 0
-RadioRST
-Text GLabel 1050 6600 0    50   Input ~ 0
-RadionSS
-Text GLabel 1050 6500 0    50   Input ~ 0
-RadioSCK
-Text GLabel 1050 6400 0    50   Input ~ 0
-RadioMISO
-Text GLabel 1050 6300 0    50   Input ~ 0
-RadioMOSI
-$Comp
-L Connector:TestPoint TP7
-U 1 1 5DEB532E
-P 1050 6100
-F 0 "TP7" V 1050 6300 50  0000 L CNN
-F 1 "TestPoint" V 1050 6500 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1250 6100 50  0001 C CNN
-F 3 "~" H 1250 6100 50  0001 C CNN
-	1    1050 6100
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:TestPoint TP8
-U 1 1 5DEB5925
-P 1050 6200
-F 0 "TP8" V 1050 6400 50  0000 L CNN
-F 1 "TestPoint" V 1050 6600 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1250 6200 50  0001 C CNN
-F 3 "~" H 1250 6200 50  0001 C CNN
-	1    1050 6200
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:TestPoint TP9
-U 1 1 5DEB5BC5
-P 1050 6300
-F 0 "TP9" V 1050 6500 50  0000 L CNN
-F 1 "TestPoint" V 1050 6700 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1250 6300 50  0001 C CNN
-F 3 "~" H 1250 6300 50  0001 C CNN
-	1    1050 6300
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:TestPoint TP10
-U 1 1 5DEB5CC9
-P 1050 6400
-F 0 "TP10" V 1050 6600 50  0000 L CNN
-F 1 "TestPoint" V 1050 6800 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1250 6400 50  0001 C CNN
-F 3 "~" H 1250 6400 50  0001 C CNN
-	1    1050 6400
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:TestPoint TP11
-U 1 1 5DEB5DED
-P 1050 6500
-F 0 "TP11" V 1050 6700 50  0000 L CNN
-F 1 "TestPoint" V 1050 6900 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1250 6500 50  0001 C CNN
-F 3 "~" H 1250 6500 50  0001 C CNN
-	1    1050 6500
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:TestPoint TP12
-U 1 1 5DEB5FA3
-P 1050 6600
-F 0 "TP12" V 1050 6800 50  0000 L CNN
-F 1 "TestPoint" V 1050 7000 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 1250 6600 50  0001 C CNN
-F 3 "~" H 1250 6600 50  0001 C CNN
-	1    1050 6600
-	0    1    1    0   
-$EndComp
-Wire Notes Line
-	2250 6700 550  6700
-Wire Notes Line
-	2250 5050 2250 6700
-Wire Notes Line
-	550  5050 550  6700
 Text GLabel 5150 4500 1    50   Input ~ 0
 IO1
 $Comp
@@ -1141,18 +1052,6 @@ Wire Notes Line
 Wire Notes Line
 	1900 1700 1900 2600
 Wire Notes Line
-	2450 6700 3950 6700
-Wire Notes Line
-	3950 4250 3950 6700
-Wire Notes Line
-	2450 4250 2450 6700
-Wire Notes Line
-	4050 6700 5600 6700
-Wire Notes Line
-	4050 4250 4050 6700
-Wire Notes Line
-	5600 4250 5600 6700
-Wire Notes Line
 	5600 4150 5600 550 
 Wire Notes Line
 	3050 4150 5600 4150
@@ -1207,4 +1106,26 @@ F8 "SCK" I R 1650 5650 50
 $EndSheet
 Wire Wire Line
 	1000 5900 1100 5900
+Wire Notes Line
+	2350 5050 2350 6200
+Wire Notes Line
+	2350 6200 550  6200
+Wire Notes Line
+	550  6200 550  5050
+Wire Notes Line
+	550  5050 2350 5050
+Wire Notes Line
+	2450 6200 3950 6200
+Wire Notes Line
+	2450 4250 2450 6200
+Wire Notes Line
+	3950 4250 3950 6200
+Wire Notes Line
+	2450 4250 3950 4250
+Wire Notes Line
+	5600 4250 5600 6200
+Wire Notes Line
+	5600 6200 4050 6200
+Wire Notes Line
+	4050 6200 4050 4250
 $EndSCHEMATC
