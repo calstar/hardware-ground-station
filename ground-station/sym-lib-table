@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name calstar)(type Legacy)(uri ${KIPRJMOD}/calstar.lib)(options "")(descr ""))
+  (lib (name ground-station-rescue)(type Legacy)(uri ${KIPRJMOD}/ground-station-rescue.lib)(options "")(descr ""))
 )
